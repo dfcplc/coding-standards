@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>Debit Finance Collections Plc: Coding Standards</title>
+        <meta name="description" content="Debit Finance Collections Plc: Coding Standards">
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -37,6 +37,21 @@
 		<p>To aid in the re-use and organisation of project components we opt to use classes instead of function files. </p>
 		<p>The global namespace should not define any functions and class definitions should be stored in their own file within the <code>lib</code> directory. </p>
 		<p>Any functions that provide general utilities, such as truncating text, can be placed into helper classes (<code>/lib/Helper/Text.php</code> as an example) and the function defined as a <code>static</code> method.</p>
+		</div>
+		<div class="section">
+		<h4>Database Access</h4>
+		<p>All new code produced must use <a href="http://php.net/manual/en/book.pdo.php">PHP&#8217;s PDO Library</a> in favour of mysql, or mysqli. The only exception to this is when connecting to an Oracle Database where the <a href="http://www.php.net/manual/en/book.oci8.php">OCI8 Functions</a> should be used instead (at least until the PDO_OCI module becomes stable).</p>
+		</div>
+		<div class="section">
+		<h4>Cron&#8217;s</h4>
+		<p>When PHP Cron&#8217;s are used, these should be setup to run in Command Line Mode, and must contain some initial checks that the script is being run in CLI Mode.</p>
+<pre>
+if (PHP_SAPI!=='cli') 
+{
+   die("Cron must be run in CLI Mode");
+}
+</pre>
+		<p>The Cronlock Library (developed by Andrew Radford) should also be used, which will allow for logging or cron&#8217;s for debugging, along with stopping cron&#8217;s from overlapping. Code is available <a href="#todo">on GitHub</a></p>
 		</div>
 		<div class="section">
 		<h4>Naming Conventions</h4>

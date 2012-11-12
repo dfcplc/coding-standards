@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/vendor/modernizr.min.js"></script>
+    </head>
+    <body>
+    <div class="container">
+		
+		<h1>PHP Coding Standards</h1>
+		
+		<hr />
+	
+		<p>Here at Debit Finance Collections Plc we aim to develop solutions and sites quickly, efficiently and effectively. </p>
+		<p>In order for us to maintain a high standard whilst still producing flexible products we need to ensure that the code we produce is of a high and consistent standard.</p>
+		<p>With this in mind, we kindly ask that you follow our coding guidelines at all times. These are based on PHP&#8217;s <a href="https://github.com/dfcplc/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a>, <a href="https://github.com/dfcplc/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a> and <a href="https://github.com/dfcplc/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2</a> standards but with some minor amendments.</p>
+		<p>The goal is to produce elegant and easily maintainable code.</p>
+		<div class="section">
+		<h4>Autoloading</h4>
+		<p>All none framework based projects should implement a PSR-0 compatible autoloader. One difference being that all the class files should be located within the <code>lib</code> directory located in the project root. </p>
+		<p>E.g. the class <em>Example_TextHelper</em> would be located in <code>/lib/Example/TextHelper.php</code>.</p>
+		</div>
+		<div class="section">
+		<h4>Object Orientated Approach</h4>
+		<p>To aid in the re-use and organisation of project components we opt to use classes instead of function files. </p>
+		<p>The global namespace should not define any functions and class definitions should be stored in their own file within the <code>lib</code> directory. </p>
+		<p>Any functions that provide general utilities, such as truncating text, can be placed into helper classes (<code>/lib/Helper/Text.php</code> as an example) and the function defined as a <code>static</code> method.</p>
+		</div>
+		<div class="section">
+		<h4>Naming Conventions</h4>
+		<p>All class names are Capitalised. </p>
+		<p>Underscores in class names indicate directory separators and function names are camelCase. </p>
+		<p>Private variables within classes should be prefixed with an underscore. </p>
+		<p>Class private variables are to be prefixed with an underscore and must omit the <code>var</code> keyword. </p>
+		<p>All PHP keywords &#8211; such as <code>true</code>, <code>false</code>, <code>null</code> &#8211; are to be lowercase.</p>
+		</div>
+		<div class="section">
+		<h4>File Responsibilities</h4>
+		<p>A file can either load and output or define, not both. This is to say that any file that defines a class should not output or change anything globally. This allows the file to be used much more freely without worrying about dependencies. When writing a class, this should be able to be added to any project without any alteration, and therefore should be self-sufficient.</p>
+		</div>
+		<div class="section">
+		<h4>Global Variables &amp; the Global Keyword</h4>
+		<p>PHP makes it very easy to programme quickly but the downside of this is that it can quickly allow people to produce un-mangeable code. A strong cause of this are global variables and the <code>global</code> keyword. </p>
+		<p>The use of global variables is discouraged and even more so the use of the global keyword to reference global parameters. There is always a better option that may require slightly more work but the up-side is the speed at which it can be extended, tested and refactored later on. </p>
+		<p>The easy option is rarely the best option.</p>
+		</div>
+		<div class="section">
+		<h4>File Formatting &amp; Encoding</h4>
+		<p>All PHP files should be encoded using <code>UTF-8</code> without <code>BOM</code>. All PHP files must have a single .php extension. The only time other extensions are acceptable is if following a clearly defined pattern (often found in frameworks for template files).</p>
+		<p>When defining classes or functions the curly brackets must be on a separate line. Similarly this is the same as conditional statements and loops.</p>
+		<pre>
+class MyClassName
+{
+	public function __construct()
+	{
+	    if (true)
+		{
+	        // true
+	    }
+		else
+		{
+	        // false
+	    }
+	}
+}
+</pre>
+		<p>All files must be correctly indented using tabs and any files that contain only PHP should leave out the php closing tag. This prevents any whitespace at the end of the file.</p>
+		</div>
+		
+		<footer>
+			<hr />
+			<p>&copy; 2012 - Debit Finance Collections Plc. All Rights Reserved.
+		</footer>
+		
+    </div>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="scripts/vendor/bootstrap/bootstrap-affix.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-alert.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-tooltip.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-modal.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-transition.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-button.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-popover.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-typeahead.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-carousel.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-scrollspy.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

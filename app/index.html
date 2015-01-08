@@ -10,19 +10,15 @@
         <meta name="description" content="Debit Finance Collections Plc: Coding Standards">
         <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        
         <link rel="stylesheet" href="styles/main.css">
-        <script src="scripts/vendor/modernizr.min.js"></script>
     </head>
     <body>
     <div class="container">
-		
+
 		<h1>PHP Coding Standards</h1>
-		
+
 		<hr />
-	
+
 		<p>Here at Debit Finance Collections Plc we aim to develop solutions and sites quickly, efficiently and effectively. </p>
 		<p>In order for us to maintain a high standard whilst still producing flexible products we need to ensure that the code we produce is of a high and consistent standard.</p>
 		<p>With this in mind, we kindly ask that you follow our coding guidelines at all times. These are based on PHP&#8217;s <a href="https://github.com/dfcplc/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a>, <a href="https://github.com/dfcplc/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a> and <a href="https://github.com/dfcplc/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2</a> standards but with some minor amendments.</p>
@@ -46,7 +42,7 @@
 		<h4>Cron&#8217;s</h4>
 		<p>When PHP Cron&#8217;s are used, these should be setup to run in Command Line Mode, and must contain some initial checks that the script is being run in CLI Mode.</p>
 <pre>
-if (PHP_SAPI!=='cli') 
+if (PHP_SAPI!=='cli')
 {
    die("Cron must be run in CLI Mode");
 }
@@ -93,37 +89,12 @@ class MyClassName
 </pre>
 		<p>All files must be correctly indented using tabs and any files that contain only PHP should leave out the php closing tag. This prevents any whitespace at the end of the file.</p>
 		</div>
-		
+
 		<footer>
 			<hr />
-			<p>&copy; 2012 - Debit Finance Collections Plc. All Rights Reserved.
+			<p>&copy; 2012-2015 - Debit Finance Collections Plc. All Rights Reserved.
 		</footer>
-		
+
     </div>
-
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
-    
-    <!-- build:js scripts/plugins.js -->
-    <script src="scripts/vendor/bootstrap/bootstrap-affix.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-alert.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-tooltip.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-modal.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-transition.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-button.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-popover.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-typeahead.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-carousel.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-scrollspy.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
-    <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
-    <!-- endbuild -->
 </body>
 </html>
